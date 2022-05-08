@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var index = 0
 
     
+    
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +26,10 @@ class ViewController: UIViewController {
         print(index) //去了解下面數值如何改變
         let name = movies [index]
         imageView.image = UIImage(named: name)
+        pageControl.currentPage = index
+        
+        
     }
-    
-    
-    
-    
-    
     
     @IBAction func next(_ sender: Any) {
         index = (index + 1) % movies.count
@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         print(index)
         let name = movies [index]
         imageView.image = UIImage(named: name)
+        pageControl.currentPage = index
+       
         
         
         
